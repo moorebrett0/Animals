@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="animalShelter">
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="service/AnimalFactory.js"></script>
+    <script src="controllers/AnimalsCtrl.js"></script>
+        <title>Animal Shelter</title>
+    </head>
+    <body>
+        <div class="container">
+        <div ng-controller="AnimalsCtrl">
+            <div class="col-md-4">
+                <h2>Our critters!</h2>
+                    <ul>
+                    <li ng-repeat="item in animals">
+                        {{item.name}}<button ng-click="item.name" type="btn btn-primary btn-xs">Adopt Me</button>
+                    </li>
+                </ul>
+                <form ng-submit="AnimalFactory.addAnimal()" class="form-inline" role="form">
+                    <div class="form-group">
+                        <input type="text" ng-model="AnimalFactory.animalName" class="form-control" id="animalName" placeholder="Enter the pet's name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" ng-model="AnimalFactory.animalSpecies" class="form-control" id="animalSpecies" placeholder="Enter the type of animal">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" ng-model="AnimalFactory.vaccinated" default=false>Vaccinated                                                           </div>
+                        <button type="submit">Enter</button>
+                </form>
+
+            </div>
+
+
+        </div>
+        </div>
+
+    </body>
+</html>
