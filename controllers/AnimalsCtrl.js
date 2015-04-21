@@ -9,5 +9,9 @@ animalShelter.controller('AnimalsCtrl', function AnimalCtrl($scope, AnimalFactor
         $scope.animalName = null;
         $scope.animalSpecies = null;
         $scope.vaccinated = null;
-    }
+    };
+    $scope.deleteAnimal = function(animal) {
+        var index = $scope.animals.indexOf(animal);
+        AnimalFactory.deleteAnimal(index);
+    };
 });

@@ -21,7 +21,8 @@
                              <li>{{item.species}}</li>
                              <li ng-show="item.vaccinated" class="glyphicon glyphicon-ok"></li>
                          </ul>
-                         <button ng-click="item.adopted = true"  type="btn btn-primary btn-xs">Adopt Me</button>
+                         <button ng-click="item.adopted = true"  class="btn btn-primary btn-xs">Adopt Me</button>
+                         <button ng-click="deleteAnimal(item)" class="btn btn-warning btn-xs">X</button>
                     </li>
                 </ul>
                 <form ng-submit="addAnimal()" class="form-inline" role="form">

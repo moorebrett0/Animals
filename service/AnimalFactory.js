@@ -9,5 +9,10 @@ animalShelter.factory('AnimalFactory', function AnimalFactory() {
         factory.animals.push(animal);
     };
 
+    factory.deleteAnimal = function(index) {
+        factory.animals.splice(index, 1);
+
+    };
+
     return factory;
 });
